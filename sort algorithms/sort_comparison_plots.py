@@ -88,7 +88,7 @@ def bubbleSort(alist):
 
 
 
-eleman_sayisi=[1000,2000,3000,4000]
+eleman_sayisi=[1000,2000,3000,4000,5000]
 
 def CreateShuffledArray(length):
     a = (np.arange(length))
@@ -109,7 +109,7 @@ for i in eleman_sayisi:
 plt.figure(1)
 plt.title('y=n')
 plt.xlabel('eleman sayısı')
-plt.ylabel('zaman')
+plt.ylabel('karşılık')
 plt.plot(eleman_sayisi,y_equals_n)
 plt.axis([0,max(eleman_sayisi),0,max(y_equals_n)])
 plt.show()
@@ -117,7 +117,7 @@ plt.show()
 plt.figure(2)
 plt.title('y=n^2')
 plt.xlabel('eleman sayısı')
-plt.ylabel('zaman')
+plt.ylabel('karşılık')
 plt.plot(eleman_sayisi,y_power_two)
 plt.axis([0,max(eleman_sayisi),0,int(max(y_power_two))])
 plt.show()
@@ -125,7 +125,7 @@ plt.show()
 plt.figure(3)
 plt.title('y=nlogn')
 plt.xlabel('eleman sayısı')
-plt.ylabel('zaman')
+plt.ylabel('karşılık')
 plt.plot(eleman_sayisi,y_nlogn)
 plt.axis([0,max(eleman_sayisi),0,max(y_nlogn)])
 plt.show()
@@ -200,13 +200,13 @@ plt.xlabel('eleman sayısı')
 plt.ylabel('karşılık')
 plt.plot(e,y_equals_n, e,y_power_two, e, y_nlogn)
 plt.annotate('y=n', xy=(e[len(e)-1], y_equals_n[len(y_equals_n)-1]), xytext=(e[len(e)-1], y_equals_n[len(y_equals_n)-1]),
-            arrowprops=dict(facecolor='black', shrink=0.05),
+            #arrowprops=dict(facecolor='black', shrink=0.05),
             )
 plt.annotate('y=n^2', xy=(e[len(e)-1], y_power_two[len(y_power_two)-1]), xytext=(e[len(e)-1], y_power_two[len(y_power_two)-1]),
-            arrowprops=dict(facecolor='black', shrink=0.05),
+            #arrowprops=dict(facecolor='black', shrink=0.05),
             )
 plt.annotate('y=nlogn', xy=(e[len(e)-1], y_nlogn[len(y_nlogn)-1]), xytext=(e[len(e)-1], y_nlogn[len(y_nlogn)-1]),
-            arrowprops=dict(facecolor='black', shrink=0.05),
+            #arrowprops=dict(facecolor='black', shrink=0.05),
             )
 merged_y_n = y_equals_n + y_nlogn + y_power_two
 plt.axis([0,max(eleman_sayisi),0,max(merged_y_n)])
@@ -223,17 +223,17 @@ plt.title('bubble, insertion, selection, quick')
 plt.xlabel('eleman sayısı')
 plt.ylabel('zaman')
 plt.plot(e,bubble_times, e,insertion_times, e, selection_times,e,quick_times)
-plt.annotate('bubble', xy=(e[len(e)-1], bubble_times[len(bubble_times)-1]), xytext=(e[len(e)-1], bubble_times[len(bubble_times)-1]),
-            arrowprops=dict(facecolor='black', shrink=0.05),
+plt.annotate('bubble:' + str(bubble_times[len(bubble_times)-1]), xy=(e[len(e)-1], bubble_times[len(bubble_times)-1]), xytext=(e[len(e)-1], bubble_times[len(bubble_times)-1]),
+            #arrowprops=dict(facecolor='black', shrink=0.05),
             )
-plt.annotate('insertion', xy=(e[len(e)-1], insertion_times[len(insertion_times)-1]), xytext=(e[len(e)-1], insertion_times[len(insertion_times)-1]),
-            arrowprops=dict(facecolor='black', shrink=0.05),
+plt.annotate('insertion:' + str(insertion_times[len(insertion_times)-1]), xy=(e[len(e)-1], insertion_times[len(insertion_times)-1]), xytext=(e[len(e)-1], insertion_times[len(insertion_times)-1]),
+            #arrowprops=dict(facecolor='black', shrink=0.05),
             )
-plt.annotate('selection', xy=(e[len(e)-1], selection_times[len(selection_times)-1]), xytext=(e[len(e)-1], selection_times[len(selection_times)-1]),
-            arrowprops=dict(facecolor='black', shrink=0.05),
+plt.annotate('selection:' + str(selection_times[len(selection_times)-1]), xy=(e[len(e)-1], selection_times[len(selection_times)-1]), xytext=(e[len(e)-1], selection_times[len(selection_times)-1]),
+            #arrowprops=dict(facecolor='black', shrink=0.05),
             )
-plt.annotate('quick', xy=(e[len(e)-1], quick_times[len(quick_times)-1]), xytext=(e[len(e)-1], quick_times[len(quick_times)-1]),
-            arrowprops=dict(facecolor='black', shrink=0.05),
+plt.annotate('quick:' + str(quick_times[len(quick_times)-1]), xy=(e[len(e)-1], quick_times[len(quick_times)-1]), xytext=(e[len(e)-1], quick_times[len(quick_times)-1]),
+            #arrowprops=dict(facecolor='black', shrink=0.05),
             )
 merged_times = bubble_times + insertion_times + selection_times + quick_times
 plt.axis([0,max(eleman_sayisi),0,max(merged_times)])
