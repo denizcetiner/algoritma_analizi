@@ -85,10 +85,7 @@ def bubbleSort(alist):
                 alist[i+1] = temp
 
 
-
-
-
-eleman_sayisi=[1000,2000,3000,4000,5000]
+eleman_sayisi=[1000,4000,7000,12000,20000]
 
 def CreateShuffledArray(length):
     a = (np.arange(length))
@@ -105,31 +102,6 @@ y_nlogn = []
 for i in eleman_sayisi:
     y_nlogn.append(i * (math.log(i)))
     
-
-plt.figure(1)
-plt.title('y=n')
-plt.xlabel('eleman sayısı')
-plt.ylabel('karşılık')
-plt.plot(eleman_sayisi,y_equals_n)
-plt.axis([0,max(eleman_sayisi),0,max(y_equals_n)])
-plt.show()
-
-plt.figure(2)
-plt.title('y=n^2')
-plt.xlabel('eleman sayısı')
-plt.ylabel('karşılık')
-plt.plot(eleman_sayisi,y_power_two)
-plt.axis([0,max(eleman_sayisi),0,int(max(y_power_two))])
-plt.show()
-
-plt.figure(3)
-plt.title('y=nlogn')
-plt.xlabel('eleman sayısı')
-plt.ylabel('karşılık')
-plt.plot(eleman_sayisi,y_nlogn)
-plt.axis([0,max(eleman_sayisi),0,max(y_nlogn)])
-plt.show()
-
 bubble_times = []
 selection_times = []
 insertion_times = []
@@ -162,38 +134,6 @@ for i in eleman_sayisi:
     
     
 e = eleman_sayisi
-plt.figure(4)
-plt.title('bubble sort')
-plt.xlabel('eleman sayısı')
-plt.ylabel('zaman')
-plt.plot(eleman_sayisi,bubble_times)
-plt.axis([0,max(eleman_sayisi),0,max(bubble_times)])
-plt.show()
-
-plt.figure(5)
-plt.title('insertion sort')
-plt.xlabel('eleman sayısı')
-plt.ylabel('zaman')
-plt.plot(eleman_sayisi,insertion_times)
-plt.axis([0,max(eleman_sayisi),0,max(insertion_times)])
-plt.show()
-
-plt.figure(6)
-plt.title('selection sort')
-plt.xlabel('eleman sayısı')
-plt.ylabel('zaman')
-plt.plot(eleman_sayisi,selection_times)
-plt.axis([0,max(eleman_sayisi),0,max(selection_times)])
-plt.show()
-
-plt.figure(7)
-plt.title('quick sort')
-plt.xlabel('eleman sayısı')
-plt.ylabel('zaman')
-plt.plot(eleman_sayisi,quick_times)
-plt.axis([0,max(eleman_sayisi),0,max(quick_times)])
-plt.show()
-
 plt.figure(8)
 plt.title('y=n, y=n^2, y=nlogn')
 plt.xlabel('eleman sayısı')
